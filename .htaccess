@@ -1,0 +1,14 @@
+Options +FollowSymlinks
+#кодировка
+AddDefaultCharset UTF-8
+
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+#правила перезаписования urls
+RewriteEngine on
+
+#RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+
+RewriteRule $ index.php [nocase,last]
